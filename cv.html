@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html lang="en-EN">
+<head>
+    <title>Alexey Dorofeev's Curriculum vitae</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="icon" sizes="16x16" href="">
+    <link rel="stylesheet" href="data/screen.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            function scrollToSection(hash) {
+
+                if(hash == '#portfolio') $("#fake-footer").show();
+                else $("#fake-footer").hide();
+
+                var targetOffset = $(hash).offset().top - 130;
+                var $prevsections = $(hash).prevAll('section');
+                if($prevsections.length) $prevsections.animate({opacity: 0.05}, 1000);
+
+                $("body").animate({scrollTop: targetOffset}, 500, function(){
+                    $(hash).nextAll('section').css({opacity: 1});
+                });
+                window.location.hash = hash;
+
+            }
+
+            $(window).scroll(function(){
+                $('section').css({opacity: 1});
+            });
+            $("header").click(function(){
+                $("body").animate({scrollTop: 0}, 500, function(){
+                    $('section').css({opacity: 1});
+                    window.location.hash = "";
+                });
+            });
+
+            var hsh = window.location.hash;
+            if(hsh.length) scrollToSection(hsh);
+
+            $("#main-menu li a").click(function(evt){
+                evt.preventDefault();
+                scrollToSection($(this).attr('href'));
+            });
+        });
+    </script>
+</head>
+<body>
+<header id="header">
+    Alexey Dorofeev's Curriculum vitae
+</header>
+<div class="header-placeholder" id="top"></div>
+<menu>
+    <ul id="main-menu">
+        <li><a href="#personal-details">Personal details</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#sertifications">Certifications</a></li>
+        <li><a href="#languages">Languages</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#keywords">Keywords</a></li>
+        <li><a href="#references">References</a></li>
+        <li><a href="#portfolio">Work portfolio</a></li>
+    </ul>
+    <div style="clear:both;"></div>
+</menu>
+<div class="menu-placeholder"></div>
+<section id="personal-details">
+    <h1>Personal details</h1>
+    <ul>
+        <li>Date of birth: 09.10.1975</li>
+        <li>Nationality: Russian</li>
+        <li>Marital status: Married</li>
+        <li>Gender: male</li>
+        <li>Email address: <a href="mailto:" title="[GMCP] Compose a new mail to dorofey@gmail.com">dorofey@gmail.com</a></li>
+        <li>Tel (mobile): +47 46679017</li>
+        <li>Portfolio site: <a href="http://www.krop.com/dorofey/resume/">http://www.krop.com/dorofey/resume/</a></li>
+    </ul>
+</section>
+<section id="education">
+    <h1>Education</h1>
+    <p><strong>05.08.1993 - 21.11.1994</strong> &mdash; Bachelor degree studies in Mathematics and Information Technology, Murmansk State Pedagogical University (Information Technology - College / University, Bachelor's degree)</p>
+</section>
+<section id="work">
+    <h1>Work experience</h1>
+    <p>
+        <strong>28.10.1996 - 31.03.1998</strong> &mdash; engineer, TechnoCentre Company, Murmansk, Russia<br />
+        <strong>01.04.1998 - 31.05.2001</strong> &mdash; engineer-programmer, TechnoCentre Company, Murmansk<br />
+        <strong>01.06.2001 - 01.04.2005</strong> &mdash; programming specialist, website developer, web and print designer, TechnoCentre Company, Murmansk<br />
+        <strong>01.04.2005 - 01.06.2009</strong> &mdash; lead website developer, web and print designer, advertising manager, TechnoCentre Company, Murmansk<br />
+        <strong>15.06.2009 - 15.08.2009</strong> &mdash; IT support, StatoilHydro, Bergen
+    </p>
+</section>
+<section id="sertifications">
+    <h1>Training/certifications</h1>
+    <p>
+        <strong>24.02.2000</strong> &mdash; Certified Computer Technician, Brainbench<br />
+        <strong>17.04.2000</strong> &mdash; Desktop management using the Intel (R) CA810 motherboard<br />
+        <strong>18.04.2000</strong> &mdash; Entry-Level Server Integration (L440GX+ and C440GX+)<br />
+        <strong>18.04.2000</strong> &mdash; PI302 &mdash; Platform design<br />
+        <strong>20.04.2000</strong> &mdash; IN102, Technology Essentials<br />
+        <strong>21.04.2000</strong> &mdash; PI102 &mdash; Platform Integration Skills and Technologies<br />
+        <strong>11.04.2001</strong> &mdash; CIW Professional, CIW Certification<br />
+        <strong>11.04.2001</strong> &mdash; CIW Associate, CIW Certification<br />
+        <strong>01.06.2001</strong> &mdash; Server+ Certified Professional, CompTIA
+    </p>
+</section>
+<section id="languages">
+    <h1>Languages</h1>
+    <ul>
+        <li><strong>Russian</strong> &mdash; Oral: Excellent. Written: Excellent</li>
+        <li><strong>English</strong> &mdash; Oral: Good. Written: Good</li>
+        <li><strong>Norwegian</strong> &mdash; going to courses (1 year, 150 hours)</li>
+    </ul>
+</section>
+<section id="skills">
+    <h1>Skills</h1>
+    <h2>Programming</h2>
+    <ul>
+        <li>PHP: excellent level<br /><em>PHP+MySQL, Highload, MVC frameworks</em></li>
+        <li>Ruby (RoR), Python (Django, Google App Engine): good level</li>
+        <li>MySQL: excellent level<br /><em>RAW SQL, SQL optimisation, ORM</em></li>
+        <li>PgSQL, MSSQL: good level</li>
+        <li>HTML, CSS: excellent level<br /><em>HTML5, CSS3</em></li>
+        <li>JavaScript:  excellent level<br /><em>JS Frameworks - jQuery, jQuery UI, Prototype, Sciptaculous. Unobtrusive JS</em></li>
+    </ul>
+    <h2>Graphics</h2>
+    <ul>
+        <li>Adobe Photoshop, Illustrator, Dreamweaver: excellent level</li>
+        <li>Adobe Flash, After Effects, Premiere: good level</li>
+        <li>Knowledge and skills to work in variety of application programmes for creation of graphics, 3D, etc</li>
+    </ul>
+</section>
+<section id="keywords">
+    <h1>Keywords / additional info</h1>
+    <p>
+        Web developer, web and print designer, programmer. 10 years of experience in web design and development.<br />
+        Strong PHP skills including PHP5, Object Oriented Programming, knowlege of MVC and MVC frameworks (Zend, Cake PHP, Kohana), Smarty, Memcached.<br />
+        Average skills in Ruby, Python, Java, .Net.<br />
+        Strong MySQL skills (Raw SQL, ORM) development, management, optimization.<br />
+        Strong Javascript skills including popular frameworks (jQuery+jQuery UI, Prototype+Scriptaculous), AJAX, unobtrusive JS.<br />
+        Strong HTML and CSS skills.<br />
+        Solid experience in LAMP platform setup and optimisation.<br />
+        Advanced user of Microsoft Windows, MacOSX, Linux, FreeBSD.
+    </p>
+    <p>Knowledgeable, always ready to learn something new and ready for challenges. I can work in a team and on my own as well, I'm flexible and mobile.</p>
+</section>
+<section id="references">
+    <h1>References</h1>
+    <p>
+        <strong>Dmitriy Kucherenko</strong>,<br />
+        <em>Head (Chief Manager) of Technocentre Company, Murmansk, Russia</em><br />
+        Mobile phone: +7 911 300 05 05<br />
+        E-mail: <a href="mailto:mail@tcs.ru">mail@tcs.ru</a>
+    </p>
+    <p>
+        <strong>Carsten Jopp</strong>,<br />
+        <em>Leading advisor, GBS HRS People and Leadership Development, StatoilHydro, Bergen</em><br />
+        Mobile phone: +47 47611292<br />
+        E-mail: <a href="mailto:cjop@statoilhydro.com">cjop@statoilhydro.com</a>
+    </p>
+</section>
+<section id="portfolio">
+    <h1>Work portfolio</h1>
+    <h2>Some of the websites created by me</h2>
+    <ul>
+        <li>http://tcs.ru/</li>
+        <li>http://airport-murmansk.ru/</li>
+        <li>http://murmanpotrebnadzor.ru/</li>
+        <li>http://www.murmannerpa.ru/</li>
+        <li>http://www.maxima51.ru/</li>
+        <li>http://alerom-murmansk.ru/</li>
+        <li>http://shumarik.ru/</li>
+        <li>http://murmanportstrah.ru/</li>
+        <li>http://m-tools.ru/</li>
+        <li>http://tuloma.ru/</li>
+        <li>http://fsspmo.mels.ru/</li>
+        <li>http://skyparagliders.ru/</li>
+        <li>http://masterlova.ru</li>
+    </ul>
+    <h2>Websites I took part in creation</h2>
+    <ul>
+        <li>http://shipagency.ru/</li>
+        <li>http://partner51.ru/</li>
+        <li>http://mrclub.ru/</li>
+        <li>http://motomurman.ru/</li>
+        <li>http://mrm.tournav.ru/</li>
+        <li>http://granit51.ru</li>
+    </ul>
+</section>
+<div id="fake-footer" style="height:200px;display:none;"></div>
+</body>
+</html>
